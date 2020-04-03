@@ -1,0 +1,48 @@
+﻿@model SSLS.WebUI.Models.BooksViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>图书详情</title>
+    <style>
+        .product_main {
+            width:1200px;
+            margin:0 auto;
+        }
+        .product_img
+        {
+            float:left;
+            width:320px;
+            padding:0 20px 30px 0;
+        }
+        .product_img  img{
+          width:320px;
+          height:320px;
+          display:block;
+        }
+        .product_Detail {
+            float: left;
+            width:860px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product_main">
+        <div class="product_img">
+            <img src="@Model.Book.ImageUrl" alt="Alternate Text" />
+        </div>
+        <div class="product_Detail">
+            <p>@Model.Book.Name</p>
+            <p>@Model.Book.Description</p>
+            <p>作者：<span>@Model.Book.Authors</span>出版社：<span>@Model.Book.Press</span>出版时间：<span>@Model.Book.PublishDate</span></p>
+            <p>售价：@Model.Book.Price.ToString("c")</p>
+        </div>
+    </div>
+
+</body>
+</html>

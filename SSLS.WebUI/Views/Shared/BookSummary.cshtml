@@ -1,0 +1,16 @@
+﻿@model SSLS.Domain.Concrete.Book
+
+<li>
+    <div>
+        <a href="@Url.Action("Detail", "Book", Request.Url.PathAndQuery)" target="_blank"> <img class="LI_img" src='@Url.Content(@Model.ImageUrl)' /></a>
+        <p class="Bookname">
+            <a href="#">@Model.Name</a>>
+        </p>
+        <p class="author">
+            @Model.Authors 著
+        </p>
+        <p class="pull-right label label-primary">
+            @Model.Price.ToString("c")
+        </p>
+    </div>
+</li>
